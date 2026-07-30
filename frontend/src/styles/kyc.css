@@ -1,0 +1,327 @@
+/* ==========================
+   KYC Page
+========================== */
+
+.kyc-page{
+    min-height:100vh;
+    background:#f4f7fb;
+    padding:50px 20px;
+}
+
+.kyc-container{
+
+    max-width:950px;
+
+    margin:auto;
+
+    background:#fff;
+
+    border-radius:24px;
+
+    padding:40px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+}
+
+/* Header */
+
+.kyc-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+    border-bottom:1px solid #e5e7eb;
+
+    padding-bottom:20px;
+
+}
+
+.kyc-header h2{
+
+    color:#0F4C81;
+
+    font-size:32px;
+
+    font-weight:700;
+
+}
+
+.kyc-header p{
+
+    color:#6b7280;
+
+    margin-top:8px;
+
+}
+
+.back-btn{
+
+    border:none;
+
+    background:#eef4ff;
+
+    color:#0F4C81;
+
+    padding:12px 18px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.back-btn:hover{
+
+    background:#0F4C81;
+
+    color:white;
+
+}
+
+/* Alerts */
+
+.alert-box{
+
+    padding:15px;
+
+    border-radius:12px;
+
+    margin-bottom:20px;
+
+}
+
+.alert-error{
+
+    background:#fee2e2;
+
+    color:#b91c1c;
+
+}
+
+.alert-success{
+
+    background:#dcfce7;
+
+    color:#166534;
+
+}
+
+/* Form */
+
+.kyc-form{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+
+}
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.form-group.full{
+
+    grid-column:1/-1;
+
+}
+
+.form-group label{
+
+    font-weight:600;
+
+    margin-bottom:8px;
+
+    color:#374151;
+
+}
+
+.form-group input,
+.form-group textarea{
+
+    border:1px solid #d1d5db;
+
+    border-radius:12px;
+
+    padding:14px;
+
+    font-size:15px;
+
+}
+
+.form-group textarea{
+
+    resize:none;
+
+    height:120px;
+
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+
+    outline:none;
+
+    border-color:#2563EB;
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.12);
+
+}
+
+/* Upload Card */
+
+.upload-card{
+
+    border:2px dashed #cbd5e1;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    text-align:center;
+
+    transition:.3s;
+
+    cursor:pointer;
+
+    background:#fafafa;
+
+}
+
+.upload-card:hover{
+
+    border-color:#2563EB;
+
+    background:#eff6ff;
+
+}
+
+.upload-card p{
+
+    margin:12px 0;
+
+    color:#6b7280;
+
+}
+
+.upload-card span{
+
+    color:#2563EB;
+
+    font-weight:600;
+
+}
+
+.upload-card input{
+
+    display:none;
+
+}
+
+/* Selected File */
+
+.file-name{
+
+    margin-top:10px;
+
+    color:#16a34a;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+/* Error */
+
+.error-text{
+
+    color:#dc2626;
+
+    margin-top:6px;
+
+    font-size:13px;
+
+}
+
+/* Submit */
+
+.submit-btn{
+
+    width:100%;
+
+    border:none;
+
+    border-radius:14px;
+
+    padding:16px;
+
+    background:linear-gradient(135deg,#16a34a,#22c55e);
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.submit-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 15px 35px rgba(34,197,94,.25);
+
+}
+
+.submit-btn:disabled{
+
+    opacity:.7;
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.kyc-container{
+
+padding:25px;
+
+}
+
+.kyc-form{
+
+grid-template-columns:1fr;
+
+}
+
+.kyc-header{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:20px;
+
+}
+
+}

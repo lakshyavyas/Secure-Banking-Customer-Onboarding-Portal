@@ -1,0 +1,243 @@
+/* ===========================
+   Employee Dashboard
+=========================== */
+
+.employee-dashboard-page {
+  min-height: 100vh;
+  background: #f4f7fb;
+  padding: 50px 20px;
+}
+
+.employee-dashboard-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ===========================
+   Navbar
+=========================== */
+
+.employee-navbar {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 25px 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+}
+
+.employee-navbar h2 {
+  margin: 0;
+  color: #0f4c81;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.employee-navbar p {
+  margin-top: 8px;
+  color: #6b7280;
+}
+
+.logout-btn {
+  border: none;
+  padding: 12px 24px;
+  background: #dc2626;
+  color: white;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background: #b91c1c;
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   Welcome Banner
+=========================== */
+
+.employee-banner {
+  background: linear-gradient(135deg, #0f4c81, #2563eb);
+  color: white;
+  border-radius: 24px;
+  padding: 35px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.employee-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: white;
+  color: #0f4c81;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.employee-banner h3 {
+  margin-bottom: 8px;
+  font-size: 28px;
+}
+
+.employee-banner p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.employee-role {
+  display: inline-block;
+  margin-top: 15px;
+  background: white;
+  color: #0f4c81;
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-weight: 600;
+}
+
+/* ===========================
+   Section Title
+=========================== */
+
+.section-title {
+  color: #111827;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* ===========================
+   Cards
+=========================== */
+
+.employee-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.employee-card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  text-decoration: none;
+  color: #111827;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.employee-card:hover {
+  transform: translateY(-6px);
+  text-decoration: none;
+  color: #111827;
+  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.15);
+}
+
+.employee-icon {
+  font-size: 52px;
+  margin-bottom: 18px;
+}
+
+.employee-card h4 {
+  margin-bottom: 12px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.employee-card p {
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+/* ===========================
+   Information Panel
+=========================== */
+
+.employee-info {
+  background: white;
+  border-radius: 20px;
+  padding: 35px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.employee-info h3 {
+  color: #0f4c81;
+  margin-bottom: 25px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.info-box {
+  background: #f8fafc;
+  border-left: 5px solid #2563eb;
+  border-radius: 16px;
+  padding: 25px;
+}
+
+.info-box h4 {
+  margin-bottom: 12px;
+  color: #111827;
+}
+
+.info-box p {
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width: 992px) {
+
+  .employee-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .employee-navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .employee-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .employee-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .employee-navbar h2 {
+    font-size: 24px;
+  }
+
+  .section-title {
+    font-size: 22px;
+  }
+
+}

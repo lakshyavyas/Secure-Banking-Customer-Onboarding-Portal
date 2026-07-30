@@ -1,0 +1,83 @@
+# Implementation Plan - Backend Validation Integration & Documentation Update
+
+Align the frontend components, form validations, error handling, and documentation with the backend validation changes committed in `3881edb` (`Server Validation`).
+
+## User Review Required
+
+> [!IMPORTANT]
+> - **Gender Case Sensitivity**: Backend `@Pattern(regexp = "Male|Female|Other")` is case-sensitive. The frontend `Profile.jsx` select element used `MALE`, `FEMALE`, `OTHER`, which will be updated to `Male`, `Female`, `Other`.
+> - **Missing Email Field**: `CreateEmployee.jsx` was missing the `email` field required by backend's `EmployeeRequest` (`@NotBlank`, `@Email`). This field will be added to the UI.
+> - **Account Opening Page**: `Accounts.jsx` was empty and missing from `App.jsx` routes despite being linked from `CustomerDashboard.jsx`. We will implement this with `initialDeposit` (Min 1000) validation.
+
+## Proposed Changes
+
+### Frontend Error Utility & API Service
+
+#### [NEW] [errorHandler.js](file:///d:/CDAC/Project/Banking-Project/ProjectFrontend/bank-frontend/src/utils/errorHandler.js)
+- Utility function to extract field-level or text validation messages from Spring Boot backend error responses.
+
+#### [NEW] [accountService.js](file:///d:/CDAC/Project/Banking-Project/ProjectFrontend/bank-frontend/src/api/accountService.js)
+- Axios API helper for Account Service running on `http://localhost:8084` (`/accounts/open`, `/accounts/me`).
+
+---
+
+### Frontend Components & Pages
+
+#### [MODIFY] [CreateEmployee.jsx](file:///d:/CDAC/Project/Banking-Project/ProjectFrontend/bank-frontend/src/pages/admin/CreateEmployee.jsx)
+- Add `email` state and input field to match `EmployeeRequest` DTO.
+- Enforce validation rules: `username` (4-20 chars), `password` (min 6 chars), `email` (valid email format).
+- Render field errors and backend validation response messages.
+
+#### [MODIFY] [RegisterCustomer.jsx](file:///d:/CDAC/Project/Banking-Project/ProjectFrontend/bank-frontend/src/pages/employee/RegisterCustomer.jsx)
+- Enforce validation rules: `username` (4-20 chars), `password` (min 6 chars).
+- Render field errors and backend validation error feedback.
+
+#### [MODIFY] [Profile.jsx](file:///d:/CDAC/Project/Banking-Project/ProjectFrontend/bank-frontend/src/pages/customer/Profile.jsx)
+- Change dropdown values from `MALE`/`FEMALE`/`OTHER` to `Male`/`Female`/`Other`.
+- Add client-side validation:
+  - `firstName` & `lastName`: 2-30 chars, letters only (`^[A-Za-z ]+$`).
+  - `email`: Valid email format.
+  - `mobile`: 10 digits starting with 6-9 (`^[6-9]\d{9}$`).
+  - `dateOfBirth`: Required, past date, age must be >= 18 years.
+  - `gender`: Required (`Male`, `Female`, `Other`).
+- Render inline field error messages.
+
+#### [MODIFY] [Kyc.jsx](file:///d:/CDAC/Project/Banking-Project/ProjectFrontend/bank-frontend/src/pages/customer/Kyc.jsx)
+- Add client-side validation:
+  - `aadhaarNumber`: Exactly 12 digits (`^\d{12}$`).
+  - `panNumber`: 10-char uppercase PAN format (`^[A-Z]{5}[0-9]{4}[A-Z]$`).
+  - `address`: 10-250 characters.
+- Auto-uppercase PAN input.
+- Render inline field error messages.
+
+#### [MODIFY] [Accounts.jsx](file:///d:/CDAC/Project/Banking-Project/ProjectFrontend/bank-frontend/src/pages/customer/Accounts.jsx)
+- Build Open Account component with `initialDeposit` validation (min 1000, required).
+- Show list of user accounts returned from `GET /accounts/me`.
+
+#### [MODIFY] [App.jsx](file:///d:/CDAC/Project/Banking-Project/ProjectFrontend/bank-frontend/src/App.jsx)
+- Register route `/customer/accounts` linking to `Accounts.jsx`.
+
+---
+
+### Documentation
+
+#### [NEW] [FRONTEND_API_DOCUMENTATION.md](file:///d:/CDAC/Project/Banking-Project/FRONTEND_API_DOCUMENTATION.md)
+- Complete, updated API documentation covering all four backend services (Auth Service, Customer Profile Service, KYC Service, Account Service).
+- Detailed tables specifying Endpoint, Method, Description, Allowed Roles, Request Body structure, and Validation Rules.
+
+#### [MODIFY] [README.md](file:///d:/CDAC/Project/Banking-Project/ProjectFrontend/bank-frontend/README.md)
+- Update frontend README with backend service ports, validation constraints, and page instructions.
+
+## Verification Plan
+
+### Automated Tests / Lint
+- Check JavaScript files for syntax errors using oxlint / build test:
+  ```powershell
+  cd d:\CDAC\Project\Banking-Project\ProjectFrontend\bank-frontend
+  npm run build
+  ```
+
+### Manual Verification
+- Test validation rules on `CreateEmployee`, `RegisterCustomer`, `Profile`, `Kyc`, and `Accounts` forms.
+- Verify error messages display when submitting invalid data (e.g., age < 18, bad PAN format, initial deposit < 1000).
+- Confirm documentation `.md` renders cleanly with complete validation specifications.

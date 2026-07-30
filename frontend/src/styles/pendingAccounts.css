@@ -1,0 +1,140 @@
+.pending-accounts-page{
+    min-height:100vh;
+    background:#f4f7fb;
+    padding:40px 20px;
+}
+
+.pending-accounts-container{
+    max-width:1300px;
+    margin:auto;
+}
+
+.pending-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:35px;
+}
+
+.pending-header h2{
+    color:#0F4C81;
+    font-weight:700;
+    margin:0;
+}
+
+.pending-header p{
+    color:#6b7280;
+    margin-top:6px;
+}
+
+.back-btn{
+    background:#eef4ff;
+    color:#0F4C81;
+    border:none;
+    border-radius:12px;
+    padding:12px 18px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.back-btn:hover{
+    background:#0F4C81;
+    color:#fff;
+}
+
+.account-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
+    gap:24px;
+}
+
+.account-card{
+    background:#fff;
+    border-radius:18px;
+    padding:24px;
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.account-card:hover{
+    transform:translateY(-5px);
+}
+
+.account-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:18px;
+}
+
+.account-id{
+    color:#0F4C81;
+    font-size:20px;
+    font-weight:700;
+}
+
+.status-pill{
+    background:#FEF3C7;
+    color:#92400E;
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.info-row{
+    display:flex;
+    justify-content:space-between;
+    margin:10px 0;
+    color:#374151;
+}
+
+.info-label{
+    color:#6b7280;
+}
+
+.action-buttons{
+    display:flex;
+    gap:12px;
+    margin-top:22px;
+}
+
+.action-buttons button{
+    flex:1;
+    border:none;
+    border-radius:10px;
+    padding:12px;
+    cursor:pointer;
+    font-weight:600;
+    transition:.25s;
+}
+
+.approve-btn{
+    background:#0F4C81;
+    color:#fff;
+}
+
+.reject-btn{
+    background:#fff;
+    color:#0F4C81;
+    border:2px solid #0F4C81 !important;
+}
+
+.approve-btn:hover{
+    background:#0b3d67;
+}
+
+.reject-btn:hover{
+    background:#0F4C81;
+    color:#fff;
+}
+
+.empty-state{
+    background:#fff;
+    padding:50px;
+    text-align:center;
+    border-radius:18px;
+    color:#6b7280;
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
+}

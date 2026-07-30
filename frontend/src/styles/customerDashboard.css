@@ -1,0 +1,279 @@
+.dashboard-page{
+    min-height:100vh;
+    background:#f4f7fb;
+}
+
+/* ---------- Navbar ---------- */
+
+.dashboard-navbar{
+
+    height:75px;
+
+    background:#0F4C81;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 45px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.dashboard-logo{
+
+    font-size:26px;
+
+    font-weight:700;
+
+}
+
+.dashboard-user{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.logout-btn{
+
+    border:none;
+
+    background:#ef4444;
+
+    color:white;
+
+    padding:10px 22px;
+
+    border-radius:10px;
+
+    transition:.3s;
+
+}
+
+.logout-btn:hover{
+
+    transform:translateY(-2px);
+
+    background:#dc2626;
+
+}
+
+/* ---------- Hero ---------- */
+
+.hero-banner{
+
+    margin:40px auto;
+
+    width:92%;
+
+    border-radius:25px;
+
+    padding:50px;
+
+    background:
+    linear-gradient(
+    135deg,
+    #0F4C81,
+    #2563EB);
+
+    color:white;
+
+}
+
+.hero-banner h1{
+
+    font-size:42px;
+
+    font-weight:700;
+
+}
+
+.hero-banner p{
+
+    margin-top:15px;
+
+    font-size:18px;
+
+    opacity:.95;
+
+}
+
+/* ---------- Cards ---------- */
+
+.service-grid{
+
+    width:92%;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+
+}
+
+.service-card{
+
+    background:white;
+
+    border-radius:22px;
+
+    padding:35px;
+
+    transition:.35s;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+    text-decoration:none;
+
+    color:#222;
+
+}
+
+.service-card:hover{
+
+    transform:
+    translateY(-8px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.15);
+
+}
+
+.service-icon{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:32px;
+
+    margin-bottom:25px;
+
+}
+
+.profile{
+
+    background:#dbeafe;
+
+}
+
+.kyc{
+
+    background:#dcfce7;
+
+}
+
+.account{
+
+    background:#fef3c7;
+
+}
+
+.service-card h3{
+
+    font-size:24px;
+
+    margin-bottom:10px;
+
+}
+
+.service-card p{
+
+    color:#6b7280;
+
+    margin-bottom:25px;
+
+}
+
+.open-link{
+
+    color:#2563EB;
+
+    font-weight:600;
+
+}
+
+/* ---------- Info ---------- */
+
+.info-grid{
+
+    width:92%;
+
+    margin:45px auto;
+
+    display:grid;
+
+    gap:20px;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+}
+
+.info-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.07);
+
+}
+
+.info-card h5{
+
+    margin-bottom:10px;
+
+    color:#0F4C81;
+
+}
+
+@media(max-width:768px){
+
+.dashboard-navbar{
+
+padding:20px;
+
+flex-direction:column;
+
+height:auto;
+
+gap:15px;
+
+}
+
+.hero-banner{
+
+padding:35px;
+
+}
+
+.hero-banner h1{
+
+font-size:30px;
+
+}
+
+}
